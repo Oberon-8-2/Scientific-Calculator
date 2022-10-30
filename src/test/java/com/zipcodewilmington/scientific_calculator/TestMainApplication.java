@@ -48,6 +48,22 @@ public class TestMainApplication {
         double result = Console.inverse(4);
         double actual = 1/4;
     }
+    @Test
+    public void sineValueTest() {
+        double result = Console.sineValue(45.0);
+        double actual = 0.70;
+    }
+    @Test
+    public void cosValueTest() {
+        double result = Console.cosValue(45.0);
+        double actual = 0.70;
+    }
+    @Test
+    public void tanValueTest() {
+        double result = Console.tanValue(45.0);
+        double actual = 0.70;
+    }
+
 }
 
 

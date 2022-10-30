@@ -8,78 +8,91 @@ import static com.zipcodewilmington.scientificcalculator.Console.*;
  */
 public class MainApplication {
     public static void main(String[] args) {
-        char operator;
-        double total;
-        Double num1, num2, result;
+        // create an object of Scanner class
+        double result;
         Scanner input = new Scanner(System.in);
+        double number1 = 0;
+        double number2 = 0;
+        double degrees = 45.0;
+        // ask users to enter operator
+        System.out.println("Choose an operator: +, -, *, / , sqrt , pow, Inverse , sineValue, cosValue, tanValue");
+        String operator = input.next();
+      //  char operator = input.next().charAt(0);
+        // ask users to enter numbers
+        System.out.println("Enter first number");
+         number1 = input.nextDouble();
 
-        System.out.println("What kinda math you wanna do? +, -, *, or / \nOr something more involved? > for square root, ^ for exponents, _ for inverse, and ~ for negative");
-        operator = input.next().charAt(0);
+         //if(operator == "+" || operator == "-" || operator == "*" || operator == "/" || operator == "pow") {
+        if(operator .equals("+") || operator .equals("-") || operator .equals("*") || operator.equals("/") || operator.equals("pow")) {
+             System.out.println("Enter second number");
+             number2 = input.nextDouble();
+         }
 
+        Console obj1 = new Console ();
 
-        if (operator == '+') {
-            System.out.println("What's your first number?");
-            double number1 = input.nextDouble();
-            System.out.println("What's your second number?");
-            double number2 = input.nextDouble();
-            total = add(number1, number2);
-            System.out.println(total);
-        } else if (operator == '-') {
-            System.out.println("What's your first number?");
-            double number1 = input.nextDouble();
-            System.out.println("What's your second number?");
-            double number2 = input.nextDouble();
-            total = subtraction(number1, number2);
-            System.out.println(total);
-        } else if (operator == '*') {
-            System.out.println("What's your first number?");
-            double number1 = input.nextDouble();
-            System.out.println("What's your second number?");
-            double number2 = input.nextDouble();
-            total = multiplication(number1, number2);
-            System.out.println(total);
-        } else if (operator == '/') {
-            System.out.println("What's your first number?");
-            double number1 = input.nextDouble();
-            System.out.println("What's your second number?");
-            double number2 = input.nextDouble();
-            if (number2 != 0) {
+        switch (operator) {
 
-                total = division(number1, number2);
-                System.out.println(total);
-            } else if (number2 == 0) {
-                System.out.println("error");
-            }
+            // performs addition between numbers
+            case "+":
+                result = obj1.add(number1,number2);
+                System.out.println(number1 + " + " + number2 + " = " + result);
+                break;
 
+          // performs subtraction between numbers
+            case "-":
+                result =  obj1.subtraction(number1,number2);
+                System.out.println(number1 + " - " + number2 + " = " + result);
+                break;
 
-        } else if (operator == '>') {
-            System.out.println("What's your number?");
-            double number1 = input.nextDouble();
-            total = squareRoot(number1);
-            System.out.println(total);
-        } else if (operator == '^') {
-            System.out.println("What's your number?");
-            double number1 = input.nextDouble();
-            System.out.println("By the power of?");
-            double number2 = input.nextDouble();
-            total = exponentiation(number1, number2);
-            System.out.println(total);
-        } else if (operator == '_') {
-            System.out.println("What's your number?");
-            double number1 = input.nextDouble();
-            total = inverse(number1);
-            System.out.println(total);
-        } else if (operator == '~') {
-            System.out.println("What's your number?");
-            double number1 = input.nextDouble();
-            total = negative(number1);
-            System.out.println(total);
+            // performs multiplication between numbers
+            case "*":
+                result =  obj1.multiplication(number1,number2);
+                System.out.println(number1 + " * " + number2 + " = " + result);
+                break;
+
+            // performs division between numbers
+            case "/":
+                result =  obj1.division(number1,number2);
+                System.out.println(number1 + " / " + number2 + " = " + result);
+                break;
+
+         // performs Square root
+            case "sqrt":
+                result =  obj1.squareRoot(number1);
+                System.out.println(number1 + " Square root of " + " = " + result);
+                break;
+            case "pow":
+                result = Math.pow(number1, number2);
+                System.out.println(number1 + "to the power of " + number2 + " = " + result);
+                break;
+            case "Inverse":
+                result = (1/number1);
+                System.out.println(number1 + "Inverse  of " + " = " + result);
+                break;
+            case "sineValue":
+                result = obj1.sineValue(degrees);
+                System.out.println( " sin(" + degrees + ") = " + result);
+                break;
+            case "cosValue":
+                result = obj1.cosValue(degrees);
+                System.out.println( " cos(" + degrees + ") = " + result);
+                break;
+            case "tanValue":
+                result = obj1.tanValue(degrees);
+                System.out.println( " tan(" + degrees + ") = " + result);
+                break;
+
+            case "negative":
+                result = number1 * (-1);
+                System.out.println(number1 + " negative of a number is " + " = " + result);
+            default:
+                System.out.println("Invalid operator!");
+                break;
         }
 
-
+        input.close();
     }
 }
-
 
 
 

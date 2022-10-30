@@ -41,19 +41,34 @@ public class Console {
         return number1 / number2;
     }
 
-    public static double squareRoot(double number){
-        return Math.sqrt(number);
+    public static double squareRoot(double number1){
+        return Math.sqrt(number1);
     }
-    public static double exponentiation(double a,double b){
-        return Math.pow(a,b);
+    public static double exponentiation(double number1,double number2){
+        return Math.pow(number1,number2);
     }
-    public static double inverse(double x){
-        return (1/x);
+    public static double inverse(double number){
+
+        return (1/number);
     }
 
     //adding negative number
-    public static double negative(double x){
-        return x * (-1);
+    public static double negative(double number){
+        return number * (-1);
+    }
+
+    public static double sineValue(double degrees) {
+        double radians = Math.toRadians((degrees));
+        return degrees = Math.sin(radians);
+    }
+
+    public static double cosValue(double degrees) {
+        double radians = Math.toRadians((degrees));
+        return degrees = Math.cos(radians);
+    }
+    public static double tanValue(double degrees) {
+        double radians = Math.toRadians((degrees));
+        return degrees = Math.tan(radians);
     }
 }
 
