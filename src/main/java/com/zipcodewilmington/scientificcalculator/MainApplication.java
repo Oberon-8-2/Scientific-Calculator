@@ -43,8 +43,15 @@ public class MainApplication {
             double number1 = input.nextDouble();
             System.out.println("What's your second number?");
             double number2 = input.nextDouble();
-            total = division(number1, number2);
-            System.out.println(total);
+            if (number2 != 0) {
+
+                total = division(number1, number2);
+                System.out.println(total);
+            } else if (number2 == 0) {
+                System.out.println("error");
+            }
+
+
         } else if (operator == '>') {
             System.out.println("What's your number?");
             double number1 = input.nextDouble();
