@@ -14,6 +14,7 @@ public class MainApplication {
         double number1 = 0;
         double number2 = 0;
         double degrees = 45.0;
+
         // ask users to enter operator
         System.out.println("Choose an operator: +, -, *, / , sqrt , pow, Inverse , sineValue, cosValue, tanValue");
         String operator = input.next();
@@ -36,61 +37,80 @@ public class MainApplication {
             case "+":
                 result = obj1.add(number1,number2);
                 System.out.println(number1 + " + " + number2 + " = " + result);
+                display(result);
                 break;
 
           // performs subtraction between numbers
             case "-":
                 result =  obj1.subtraction(number1,number2);
                 System.out.println(number1 + " - " + number2 + " = " + result);
+                display(result);
                 break;
 
             // performs multiplication between numbers
             case "*":
                 result =  obj1.multiplication(number1,number2);
                 System.out.println(number1 + " * " + number2 + " = " + result);
+                display(result);
                 break;
 
             // performs division between numbers
             case "/":
                 result =  obj1.division(number1,number2);
                 System.out.println(number1 + " / " + number2 + " = " + result);
+                display(result);
                 break;
 
          // performs Square root
             case "sqrt":
                 result =  obj1.squareRoot(number1);
                 System.out.println(number1 + " Square root of " + " = " + result);
+                display(result);
                 break;
             case "pow":
                 result = Math.pow(number1, number2);
                 System.out.println(number1 + "to the power of " + number2 + " = " + result);
+                display(result);
                 break;
             case "Inverse":
                 result = (1/number1);
                 System.out.println(number1 + "Inverse  of " + " = " + result);
+                display(result);
                 break;
             case "sineValue":
                 result = obj1.sineValue(degrees);
                 System.out.println( " sin(" + degrees + ") = " + result);
+                display(result);
                 break;
             case "cosValue":
                 result = obj1.cosValue(degrees);
                 System.out.println( " cos(" + degrees + ") = " + result);
+                display(result);
                 break;
             case "tanValue":
                 result = obj1.tanValue(degrees);
                 System.out.println( " tan(" + degrees + ") = " + result);
+                display(result);
                 break;
 
             case "negative":
                 result = number1 * (-1);
                 System.out.println(number1 + " negative of a number is " + " = " + result);
-            default:
+
+                default:
                 System.out.println("Invalid operator!");
                 break;
         }
 
+
+
         input.close();
+    }
+
+    private static void display(double currDisp) {
+        System.out.println(" Current Display Number " + currDisp);
+
+
     }
 }
 
