@@ -30,9 +30,7 @@ public class Console {
         return null;
     }
 
-    public static double add(double number1,double number2){
-        return number1 + number2;
-    }
+    public static double add(double number1,double number2){ return number1 + number2; }
     public static double subtraction(double number1,double number2){
         return number1 - number2;
     }
@@ -51,6 +49,11 @@ public class Console {
     }
     public static double inverse(double x){
         return (1/x);
+    }
+
+    //adding negative number
+    public static double negative(double x){
+        return x * (-1);
     }
 }
 
